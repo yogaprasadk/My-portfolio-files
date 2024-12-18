@@ -1,0 +1,161 @@
+.resume {
+  height: 100%;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column; /* Default to column for better mobile responsiveness */
+  width: 100%;
+  padding: 20px;
+
+  &__experience,
+  &__education {
+    flex: 1;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Full width on smaller screens */
+
+    &__header-text {
+      display: inline-block;
+      color: var(--yellow-theme-sub-text-color);
+      font-size: 1.8rem; /* Adjusted for better readability */
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      position: relative;
+      text-transform: uppercase;
+      padding: 10px 15px; /* Adjusted padding for better spacing */
+      border-bottom: 2px solid var(--yellow-theme-main-color);
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 1.5rem; /* Adjusted for better alignment */
+        background-color: var(--yellow-theme-main-color);
+        bottom: -5px;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    &__vertical-timeline-element {
+      width: 100%; /* Full width to fit container */
+      padding: 0 0 20px; /* Adjusted padding */
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    .vertical-timeline-element-title-wrapper {
+      display: flex;
+      align-items: center;
+
+      h3,
+      h4 {
+        font-size: 1.4rem; /* Adjusted for better readability */
+      }
+
+      h4 {
+        margin-left: 8px;
+      }
+    }
+
+    .vertical-timeline-element-title-wrapper-description {
+      font-size: 1.6rem; /* Adjusted for better readability */
+    }
+
+    .vertical-timeline-element-content {
+      box-shadow: none;
+    }
+
+    .vertical-timeline-element-content-arrow {
+      display: none;
+    }
+
+    .vertical-timeline-element-date {
+      opacity: 1;
+      color: var(--yellow-theme-sub-text-color);
+      font-size: 1.6rem; /* Adjusted for better readability */
+    }
+  }
+
+  /* Media Queries */
+  @media only screen and (max-width: 550px) {
+    padding: 10px; /* Reduced padding for mobile */
+
+    &__experience,
+    &__education {
+      gap: 1rem; /* Reduced gap for smaller screens */
+    }
+
+    &__header-text {
+      font-size: 1.6rem; /* Smaller font size for mobile */
+      padding: 8px 12px; /* Adjusted padding */
+    }
+
+    .vertical-timeline-element-title-wrapper {
+      h3,
+      h4 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+      }
+    }
+
+    .vertical-timeline-element-title-wrapper-description {
+      font-size: 1.4rem; /* Smaller font size for mobile */
+    }
+
+    .vertical-timeline-element-date {
+      font-size: 1.4rem; /* Smaller font size for mobile */
+    }
+  }
+
+  @media only screen and (min-width: 551px) and (max-width: 768px) {
+    flex-direction: row; /* Row layout for tablets */
+
+    &__experience,
+    &__education {
+      width: 50%; /* Two-column layout for tablets */
+      gap: 1.5rem; /* Adjusted gap for tablets */
+    }
+
+    &__header-text {
+      font-size: 1.8rem; /* Font size for tablets */
+      padding: 8px 12px; /* Adjusted padding */
+    }
+
+    .vertical-timeline-element-title-wrapper {
+      h3,
+      h4 {
+        font-size: 1.3rem; /* Font size for tablets */
+      }
+    }
+
+    .vertical-timeline-element-title-wrapper-description {
+      font-size: 1.5rem; /* Font size for tablets */
+    }
+
+    .vertical-timeline-element-date {
+      font-size: 1.5rem; /* Font size for tablets */
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    flex-direction: row; /* Row layout for larger screens */
+
+    &__experience,
+    &__education {
+      width: 50%; /* Two-column layout for larger screens */
+    }
+  }
+}

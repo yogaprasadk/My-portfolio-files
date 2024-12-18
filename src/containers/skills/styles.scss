@@ -1,0 +1,146 @@
+.skills {
+  padding: 20px; /* Ensure consistent padding around the section */
+
+  &__content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+
+    &__inner-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Ensure full width on smaller screens */
+
+      &__category-text {
+        color: var(--yellow-theme-main-color);
+        font-size: 2rem; /* Adjusted font size */
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        position: relative;
+        text-transform: uppercase;
+        padding: 10px 20px; /* Increased padding for better spacing */
+        border-bottom: 2px solid var(--yellow-theme-main-color);
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 1.2rem; /* Adjusted height for better alignment */
+          background-color: var(--yellow-theme-main-color);
+          bottom: -2px;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+
+      &__progressbar-container {
+        width: 100%;
+        margin-top: 20px; /* Added margin to separate from the category text */
+      }
+
+      .progressbar-wrapper {
+        width: 100%;
+        padding: 20px 0; /* Adjusted padding for better spacing */
+
+        p {
+          font-size: 1.4rem; /* Adjusted font size for smaller screens */
+          margin: 0 0 10px;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: var(--yellow-theme-sub-text-color);
+        }
+      }
+    }
+  }
+
+  /* Media Queries */
+  @media only screen and (max-width: 550px) {
+    .skills {
+      &__content-wrapper {
+        flex-direction: column;
+      }
+
+      &__content-wrapper__inner-content {
+        &__category-text {
+          font-size: 1.5rem; /* Smaller font size for mobile */
+          padding: 5px 10px; /* Reduced padding */
+        }
+
+        &__progressbar-container {
+          margin-bottom: 10px; /* Reduced margin for mobile */
+        }
+
+        .progressbar-wrapper {
+          padding: 10px 0; /* Reduced padding for mobile */
+        }
+
+        p {
+          font-size: 1.2rem; /* Smaller font size for mobile */
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 551px) and (max-width: 768px) {
+    .skills {
+      &__content-wrapper {
+        flex-direction: column;
+      }
+
+      &__content-wrapper__inner-content {
+        &__category-text {
+          font-size: 1.8rem; /* Adjusted font size for tablets */
+        }
+
+        &__progressbar-container {
+          margin-bottom: 15px; /* Adjusted margin for tablets */
+        }
+
+        .progressbar-wrapper {
+          padding: 15px 0; /* Adjusted padding for tablets */
+        }
+
+        p {
+          font-size: 1.4rem; /* Adjusted font size for tablets */
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .skills {
+      &__content-wrapper {
+        flex-direction: row; /* Default to row for larger screens */
+      }
+
+      &__content-wrapper__inner-content {
+        &__category-text {
+          font-size: 2rem; /* Larger font size for larger screens */
+          padding: 10px 20px; /* Increased padding */
+        }
+
+        &__progressbar-container {
+          margin-bottom: 20px; /* Margin for larger screens */
+        }
+
+        .progressbar-wrapper {
+          padding: 20px 0; /* Padding for larger screens */
+        }
+
+        p {
+          font-size: 1.6rem; /* Font size for larger screens */
+        }
+      }
+    }
+  }
+}
